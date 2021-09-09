@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>刷力扣遇到的JS数字问题 | 美丽新世界</title><meta name="keywords" content="JS,力扣"><meta name="author" content="波函数"><meta name="copyright" content="波函数"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录下刷力扣遇到的JS数字问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刷力扣遇到的JS数字问题">
+<meta property="og:url" content="https://huangruoqiu.github.io/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.html">
+<meta property="og:site_name" content="美丽新世界">
+<meta property="og:description" content="记录下刷力扣遇到的JS数字问题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.PNG">
+<meta property="article:published_time" content="2021-08-18T07:38:19.000Z">
+<meta property="article:modified_time" content="2021-08-18T07:38:19.000Z">
+<meta property="article:author" content="波函数">
+<meta property="article:tag" content="JS">
+<meta property="article:tag" content="力扣">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.PNG"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://huangruoqiu.github.io/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '刷力扣遇到的JS数字问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2021-08-18 15:38:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.PNG')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">美丽新世界</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">刷力扣遇到的JS数字问题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-18T07:38:19.000Z" title="发表于 2021-08-18 15:38:19">2021-08-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-18T07:38:19.000Z" title="更新于 2021-08-18 15:38:19">2021-08-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="刷力扣遇到的JS数字问题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记录下刷力扣遇到的JS数字问题。狗都不用JS刷题(╯‵□′)╯︵┻━┻</p>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><ol start="0">
+<li><p>经典的0.1 + 0.2 === 0.30000000000000004</p>
+<blockquote>
+<p>双精度浮点数的尾数部分最多支持 52 位，所以0.1、0.2都不能用二进制数精确表示，只能取近似的数，和自然也不是0.3。</p>
+</blockquote>
+</li>
+<li><p>Math.pow(3, 34) !== 3^34。相关题目<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/painting-a-grid-with-three-different-colors/">1931. 用三种不同颜色为网格涂色</a>。</p>
+<blockquote>
+<p>从1到Number.MAX_VALUE中间的数字并不连续，而是离散的。所以这里引出了最大安全值Number.MAX_SAFE_INTEGER，也就是从Number.MIN_SAFE_INTEGER到Number.MAX_SAFE_INTEGER中间的数字都是连续的，处在这个范围内的数值计算都是安全的。</p>
+</blockquote>
+</li>
+<li><p>parseInt(“83598933472122816064”) === 83598933472122810000。相关题目<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-kth-largest-integer-in-the-array/">1985. 找出数组中的第 K 大整数</a>。</p>
+<blockquote>
+<p>原因同上。</p>
+</blockquote>
+</li>
+<li><p>[“9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999990001”, “9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999990000”]通过sort((a, b) =&gt; a - b)无法排序。相关题目<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-kth-largest-integer-in-the-array/">1985. 找出数组中的第 K 大整数</a>。</p>
+<blockquote>
+<p>数字字符串的减法是转成数字去做的，同样是因为超出了Number.MAX_SAFE_INTEGER，导致两数相减为0。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017545048">js 中的 number 为何很怪异</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">波函数</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://huangruoqiu.github.io/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.html">https://huangruoqiu.github.io/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://huangruoqiu.github.io" target="_blank">美丽新世界</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JS/">JS</a><a class="post-meta__tags" href="/tags/%E5%8A%9B%E6%89%A3/">力扣</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%88%B7%E5%8A%9B%E6%89%A3%E9%81%87%E5%88%B0%E7%9A%84JS%E6%95%B0%E5%AD%97%E9%97%AE%E9%A2%98.PNG" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Angular%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%9E%8B%E6%8C%87%E4%BB%A4.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/Angular%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E5%9E%8B%E6%8C%87%E4%BB%A4.PNG" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Angular自定义属性型指令</div></div></a></div><div class="next-post pull-right"><a href="/%E5%B0%8F%E5%B2%9B%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B0.html"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E5%B0%8F%E5%B2%9B%E7%BB%8F%E6%B5%8E%E5%AD%A6%E7%AC%94%E8%AE%B0.PNG" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">小岛经济学笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/七夕当晚-力扣题使我上头.html" title="七夕当晚，力扣题使我上头"><img class="cover" src="https://cdn.jsdelivr.net/gh/huangruoqiu/HexoPicture/cover/%E4%B8%83%E5%A4%95%E5%BD%93%E6%99%9A-%E5%8A%9B%E6%89%A3%E9%A2%98%E4%BD%BF%E6%88%91%E4%B8%8A%E5%A4%B4.PNG" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-15</div><div class="title">七夕当晚，力扣题使我上头</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">举例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">3.</span> <span class="toc-text">参考文章</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 <i id="heartbeat" class="fa fas fa-heartbeat"></i> 波函数</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></head></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
